@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Roboto&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    overflow: hidden;
+    background-color: #000; /* Optional background color */
+}
+
+nav {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Bungee Spice', sans-serif;
+}
+
+nav ul li {
+    list-style: none;
+    font-size: 3vw; /* Relative font size */
+    padding: 5px;
+    margin: 10px;
+}
+
+.gameContainer {
+    background-image: url(pictures/bg3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the background covers the container */
+    width: 100vw;
+    height: 82vh;
+    position: relative;
+}
+
+.batman {
+    background-image: url(pictures/batman.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 10vw; /* Relative width */
+    height: 20vh; /* Relative height */
+    position: absolute;
+    bottom: 0vh; /* Relative position */
+    left: 2vw; /* Relative position */
+}
+
+.joker {
+    background-image: url(pictures/joker.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 10vw; /* Relative width */
+    height: 19.5vh; /* Relative height */
+    position: absolute;
+    bottom: 0vh; /* Relative position */
+    left: 100vw; /* Start off-screen */
+}
+
+.gameOver {
+    visibility: hidden;
+    font-family: 'Bungee Spice', sans-serif;
+    font-size: 8vw; /* Relative font size */
+    position: absolute;
+    top: 25vh; /* Relative position */
+    left: 22.5vw; /* Relative position */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.reset {
+    font-family: 'Bungee Spice', sans-serif;
+    background-color: white;
+    border: 2px solid black;
+    font-size: 2vw; /* Relative font size */
+    width: 15vw; /* Relative width */
+    margin-top: 2vh; /* Relative margin */
+    cursor: pointer;
+}
+
+.scoreCont {
+    font-family: 'Bungee Spice', sans-serif;
+    position: fixed;
+    right: 4vw; /* Relative position */
+    bottom: 1vh; /* Relative position */
+    font-size: 1.7vw; /* Relative font size */
+}
+
+.bottom {
+    height: 7vh; /* Relative height */
+    background-color: black;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.bottom ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 1vh;
+}
+
+.bottom ul li {
+    padding: 0.5vh;
+    margin: 0.5vh;
+    list-style-type: none;
+    font-family: 'Roboto', sans-serif;
+    color: grey;
+    font-size: 1vw; /* Relative font size */
+}
+
+.jumpBatman {
+    animation: jumpBatman 0.8s linear;
+}
+
+.jokerAnimation {
+    animation: jokerAnimation 5s linear infinite;
+}
+
+@keyframes jumpBatman {
+    0%, 100% {
+        bottom: 10vh;
+    }
+    25% {
+        bottom: 40vh;
+    }
+    50% {
+        bottom: 60vh;
+    }
+    75% {
+        bottom: 40vh;
+    }
+}
+
+@keyframes jokerAnimation {
+    0% {
+        left: 100vw;
+    }
+    100% {
+        left: -10vw; /* Move off-screen */
+    }
+}
+
+/* Media Queries for different screen sizes */
+@media (max-width: 1200px) {
+    .gameOver {
+        font-size: 10vw;
+    }
+    .reset {
+        font-size: 2.5vw;
+        width: 20vw;
+    }
+    .scoreCont {
+        font-size: 3vw;
+    }
+    .bottom ul li {
+        font-size: 2vw;
+    }
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        font-size: 5vw;
+    }
+    .batman, .joker {
+        width: 20vw;
+        height: 30vh;
+    }
+    .scoreCont {
+        font-size: 4vw;
+    }
+    .bottom ul li {
+        font-size: 2.5vw;
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul li {
+        font-size: 6vw;
+    }
+    .gameOver {
+        font-size: 12vw;
+        left: 5vw;
+    }
+    .reset {
+        font-size: 3vw;
+        width: 25vw;
+    }
+    .scoreCont {
+        font-size: 5vw;
+    }
+    .bottom ul li {
+        font-size: 3vw;
+    }
+}
